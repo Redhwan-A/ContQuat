@@ -1,5 +1,5 @@
-# WQuatNet
-**WQuatNet: Wide range quaternion-based head pose estimation [here](https://link.springer.com/article/10.1007/s44443-025-00034-1)**
+# ContQuat
+**ContQuat: Continuous Quaternion Representation for Head Pose Estimation [here](https://www.sciencedirect.com/science/article/pii/S0020025526005529?via%3Dihub)**
 
 
 <table>
