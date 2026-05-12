@@ -1,199 +1,178 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/6d-rotation-representation-for-unconstrained/head-pose-estimation-on-biwi)](https://paperswithcode.com/sota/head-pose-estimation-on-biwi?p=6d-rotation-representation-for-unconstrained)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/6d-rotation-representation-for-unconstrained/head-pose-estimation-on-aflw2000)](https://paperswithcode.com/sota/head-pose-estimation-on-aflw2000?p=6d-rotation-representation-for-unconstrained)
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/osanseviero/6DRepNet)
-
-# <div align="center"> **6D Rotation Representation for Unconstrained Head Pose Estimation (Pytorch)** </div>
-
-<p align="center">
-  <img src="https://github.com/thohemp/archive/blob/main/6DRepNet2.gif" alt="animated" />
-</p>
-
-## **Citing**
-
-If you find our work useful, please cite the paper:
-
-```BibTeX
-@INPROCEEDINGS{9897219,
-  author={Hempel, Thorsten and Abdelrahman, Ahmed A. and Al-Hamadi, Ayoub},
-  booktitle={2022 IEEE International Conference on Image Processing (ICIP)}, 
-  title={6d Rotation Representation For Unconstrained Head Pose Estimation}, 
-  year={2022},
-  volume={},
-  number={},
-  pages={2496-2500},
-  doi={10.1109/ICIP46576.2022.9897219}}
-```
-## Updates
-### 13.09.2022
-* 6DRepNet is now avaiable as pip package for even more accessable usage: *pip3 install SixDRepNet*
-
-### 20.06.2022
-* 6DRepNet has been accepted to ICIP 2022.
-### 29.05.2022
-* Simplified training script
-* Updated default training configuration for more robust results
-
-## <div align="center"> **Paper**</div>
-> Thorsten Hempel and Ahmed A. Abdelrahman and Ayoub Al-Hamadi, "6D Rotation Representation for Unconstrained Head Pose Estimation", *accepted to ICIP 2022*. [[ResearchGate]](https://www.researchgate.net/publication/358898627_6D_Rotation_Representation_For_Unconstrained_Head_Pose_Estimation)[[Arxiv]](https://arxiv.org/abs/2202.12555)
+# WQuatNet
+**WQuatNet: Wide range quaternion-based head pose estimation [here](https://link.springer.com/article/10.1007/s44443-025-00034-1)**
 
 
-### <div align="center"> **Abstract**</div>
-> In this paper, we present a method for unconstrained end-to-end head pose estimation. We address the problem of ambiguous rotation labels by introducing the rotation matrix formalism for our ground truth data and propose a continuous 6D rotation matrix representation for efficient and robust direct regression. This way, our method can learn the full rotation appearance which is contrary to previous approaches that restrict the pose prediction to a narrow-angle for satisfactory results. In addition, we propose a geodesic distance-based loss to penalize our network with respect to the <img src="https://render.githubusercontent.com/render/math?math=\textit{SO}(3)"> manifold geometry. Experiments on the public AFLW2000 and BIWI datasets demonstrate that our proposed method significantly outperforms other state-of-the-art methods by up to 20\%.
-___
+<table>
+<tr>
+<td><img src="images/1.png" height="240"></td>
 
-<div align="left">
+</tr>
+</table>
 
-## **Trained on 300W-LP, Test on AFLW2000 and BIWI**
-|                        |         |   ||             |          |          |          |          |          |          |
-| --------------------- | -------------- |--- | ------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-|                        | **Full Range** |        **Yaw**        |  **Pitch**   |   **Roll**   |   **MAE**    | |  **Yaw**    |  **Pitch**   |   **Roll**   |   **MAE**    |
-| HopeNet (<img src="https://render.githubusercontent.com/render/math?math=\alpha"> =2) |           N       |       6.47        |   6.56   |   5.44   |   6.16   ||   5.17   |   6.98   |   3.39   |   5.18   |
-| HopeNet  (<img src="https://render.githubusercontent.com/render/math?math=\alpha"> =1)|           N       |       6.92        |   6.64   |   5.67   |   6.41   ||   4.81   |   6.61   |   3.27   |   4.90   |
-| FSA-Net                |           N       |       4.50        |   6.08   |   4.64   |   5.07   ||   4.27   |   4.96   |   2.76   |   4.00   |
-| HPE                    |           N       |       4.80        |   6.18   |   4.87   |   5.28   ||   3.12   |   5.18   |   4.57   |   4.29   |
-| QuatNet                |          N        |       3.97        |   5.62   |   3.92   |   4.50   || **2.94** |   5.49   |   4.01   |   4.15   |
-| WHENet-V               |         N         |       4.44        |   5.75   |   4.31   |   4.83   ||   3.60   | **4.10** |   2.73   |   3.48   |
-| WHENet                 |         Y/N         |       5.11        |   6.24   |   4.92   |   5.42   ||   3.99   |   4.39   |   3.06   |   3.81   |
-| TriNet                 |         Y         |       4.04        |   5.77   |   4.20   |   4.67   ||   4.11   |   4.76   |   3.05   |   3.97   |
-| FDN                    |         N         |       3.78        |   5.61   |   3.88   |   4.42  | |   4.52   |   4.70   | **2.56** |   3.93   |
-|                        |                  |                   |          |          |          |          |          |          |          |
-| **6DRepNet**               |         Y        |     **3.63**      | **4.91** | **3.37** | <ins>**3.97**</ins> ||   3.24   |   4.48   |   2.68   |<ins> **3.47**</ins> |
-|                        |                  |                   |          |          |          |          |          |          |          | |
+* **Fig.**  shows the difference between the narrow and full ranges.
 
-</div>
 
-<div align="left">
+# Results visualization
 
-## **BIWI 70/30**
 
-|                         |          |          |          |          |
-| :---------------------- | :------: | :------: | :------: | :------: |
-|                         |   **Yaw**    |  **Pitch**   |   **Roll**   |   **MAE**    |
-| HopeNet (<img src="https://render.githubusercontent.com/render/math?math=\alpha"> =1) |   3.29   |   3.39   |   3.00   |   3.23   |
-| FSA-Net                 |   2.89   |   4.29   |   3.60   |   3.60   |
-| TriNet                  |   2.93   |   3.04   |   2.44   |   2.80   |
-| FDN                     |   3.00   |   3.98   |   2.88   |   3.29   |
-|                         |          |          |          |          |
-| **6DRepNet**                | **2.69** | **2.92** | **2.36** | <ins>**2.66** </ins>|
-|                         |          |          |          |          |
-</div>
+<table>
+<tr>
+<td><img src="images/AGORA1.jpg" height="160"></td>
+<td><img src="images/AGORA2.jpg" height="160"></td> 
+<td><img src="images/AGORA3.jpg" height="160"></td> 
+<td><img src="images/AGORA4.jpg" height="160"></td> 
+<td><img src="images/AGORA5.jpg" height="160"></td>
+<td><img src="images/AGORA6.jpg" height="160"></td> 
+<td><img src="images/AGORA7.jpg" height="160"></td> 
+<td><img src="images/AGORA8.jpg" height="160"></td> 
+</tr>
+</table>
 
-## **Fine-tuned Models**
-
-Fine-tuned models can be download from here: https://drive.google.com/drive/folders/1V1pCV0BEW3mD-B9MogGrz_P91UhTtuE_?usp=sharing
+* **Fig.** Snapshots of 8 different views from one sequence in the AGORA Panoptic val-set dataset.
 
 
 
-# <div align="center"> **Quick Start**: </div>
-## Pip install:
-
-```sh
-pip3 install sixdrepnet
-```
-Example usage:
-```py
-# Import SixDRepNet
-from SixDRepNet import SixDRepNet
-import cv2
 
 
-# Create model
-# Weights are automatically downloaded
-model = SixDRepNet()
+## **Our results**
+* **Table 1: MAE values for the CMU dataset obtained using different methods for Narrow-range angles: −90◦ < yaw < 90◦.**
 
-img = cv2.imread('/path/to/image.jpg')
+| Method          | Retrain? | Yaw      | Pitch    | Roll     | MAE      |
+| --------------- | -------- | -------- | -------- | -------- | -------- |
+| DirectMHP       | Yes      | 5.86     | 8.25     | 7.25     | 7.12     |
+| DirectMHP       | No       | 5.75     | 8.01     | 6.96     | 6.91     |
+| 6DRepNet        | Yes      | 5.20     | 7.22     | 6.00     | 6.14     |
+| 6DoF-HPE (ours) | Yes      | **5.13** | **6.99** | **5.77** | **5.96** |
+| WQuatNet (ours) | Yes      | **4.67** | **6.77** | **5.42** | **5.62** |
 
-pitch, yaw, roll = model.predict(img)
+* **Table 1: MAE values for the CMU dataset obtained using different methods for Full-range angles: −180◦ < yaw < 180◦.**
 
-model.draw_axis(img, yaw, pitch, roll)
-
-cv2.imshow("test_window", img)
-cv2.waitKey(0)
-
-```
-
-## Setting it up your own:
-
-
-```sh
-git clone https://github.com/thohemp/6DRepNet
-cd 6DRepNet
-```
-### Set up a virtual environment:
-```sh
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt  # Install required packages
-```
-In order to run the demo scripts you need to install the face detector
-
-```sh
-pip install git+https://github.com/elliottzheng/face-detection.git@master
-```
-
-##  **Camera Demo**:
-
-```sh
-python ./sixdrepnet/demo.py  --snapshot 6DRepNet_300W_LP_AFLW2000.pth \
-                             --cam 0
-```
+  
+| Method          | Retrain? | Yaw      | Pitch    | Roll     | MAE      |
+| --------------- | -------- | -------- | -------- | -------- | -------- |
+| Viet et al.     | No       | 9.55     | 11.29    | 8.32     | 9.72     |
+| DirectMHP       | Yes      | 7.38     | 8.56     | 7.47     | 7.80     |
+| DirectMHP       | No       | 7.32     | 8.54     | 7.35     | 7.74     |
+| WHENet          | No       | 8.51     | 7.67     | 6.78     | 7.65     |
+| Cobo et al.     | No       | –        | –        | –        | 7.45     |
+| 6DRepNet        | Yes      | 5.89     | 7.76     | 6.39     | 6.68     |
+| 6DoF-HPE (ours) | Yes      | **5.83** | **7.63** | 6.35     | **6.60** |
+| WQuatNet (ours) | Yes      | 6.04     | 7.72     | **6.34** | 6.70     |
 
 
-___
+* **Table 2: MAE values for the AGORA dataset obtained using different methods for Narrow-range angles: −90◦ < yaw < 90◦.**
 
-# <div align="center"> **Test/Train 3DRepNet** </div>
-##  **Preparing datasets**
-Download datasets:
+| Method              | Retrain? | RR | Yaw       | Pitch    | Roll     | MAE       |
+| ------------------- | -------- | -- | --------- | -------- | -------- | --------- |
+| DirectMHP           | ✅        | E  | 12.10     | 12.86    | 11.43    | 12.13     |
+| 6DoF-HPE (ours)     | ✅        | 6D | 13.92     | 10.66    | 10.24    | 11.61     |
+| 6DRepNet            | ✅        | 6D | 13.03     | 10.51    | 10.25    | 11.26     |
+| DirectMHP           | ❌        | E  | 11.19     | 9.89     | 10.46    | 10.51     |
+| **WQuatNet (ours)** | ✅        | Q  | **10.66** | **9.99** | **9.60** | **10.08** |
 
-* **300W-LP**, **AFLW2000** from [here](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm).
 
-* **BIWI** (Biwi Kinect Head Pose Database) from [here](https://icu.ee.ethz.ch/research/datsets.html)
+* **Table 2: MAE values for the AGORA dataset obtained using different methods for Full-range angles: −180◦ < yaw < 180◦.**
 
-Store them in the *datasets* directory.
-
-For 300W-LP and AFLW2000 we need to create a *filenamelist*.
-```
-python create_filename_list.py --root_dir datasets/300W_LP
-```
-The BIWI datasets needs be preprocessed by a face detector to cut out the faces from the images. You can use the script provided [here](https://github.com/shamangary/FSA-Net/blob/master/data/TYY_create_db_biwi.py). For 7:3 splitting of the BIWI dataset you can use the equivalent script [here](https://github.com/shamangary/FSA-Net/blob/master/data/TYY_create_db_biwi_70_30.py). We set the cropped image size to *256*.
+| Method              | Retrain? | RR | Yaw       | Pitch     | Roll      | MAE       |
+| ------------------- | -------- | -- | --------- | --------- | --------- | --------- |
+| DirectMHP           | ✅        | E  | 13.39     | 15.68     | 12.08     | 13.72     |
+| 6DoF-HPE (ours)     | ✅        | 6D | 15.07     | 11.74     | 11.04     | 12.62     |
+| 6DRepNet            | ✅        | 6D | 14.67     | **11.57** | 10.92     | 12.39     |
+| DirectMHP           | ❌        | E  | **12.28** | 12.42     | 11.02     | 11.91     |
+| **WQuatNet (ours)** | ✅        | Q  | 12.84     | 11.58     | **10.80** | **11.74** |
 
 
 
-## **Testing**:
 
-```sh
-python test.py  --batch_size 64 \
-                --dataset AFLW2000 \
-                --data_dir datasets/AFLW2000 \
-                --filename_list datasets/AFLW2000/files.txt \
-                --snapshot output/snapshots/1.pth \
-                --show_viz False
-```
+* **Table 3: MAE values for the BIWI and AFLW2000 datasets using different methods.**
 
-## **Training**
+| Method               | R | RR | AFLW2000 Yaw | Pitch    | Roll     | MAE      | BIWI Yaw | Pitch    | Roll     | MAE      |
+| -------------------- | - | -- | ------------ | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| HopeNet              | ❌ | E  | 6.47         | 6.56     | 5.44     | 6.16     | 4.81     | 6.60     | 3.27     | 4.89     |
+| FSA-Net              | ❌ | E  | 4.50         | 6.08     | 4.64     | 5.07     | 4.27     | 4.96     | 2.76     | 4.00     |
+| WHENet               | ❌ | E  | 4.44         | 5.75     | 4.31     | 4.83     | 3.60     | 4.10     | 2.73     | 3.48     |
+| TokenHPE             | ❌ | RM | 4.36         | 5.54     | 4.08     | 4.66     | 3.95     | 4.51     | 2.71     | 3.72     |
+| QuatNet              | ❌ | Q  | 3.97         | 5.62     | 3.92     | 4.50     | 4.01     | 5.49     | 2.94     | 4.15     |
+| MFDNet               | ❌ | RM | 4.30         | 5.16     | 3.69     | 4.38     | 3.40     | 4.68     | 2.77     | 3.62     |
+| Srnet                | ❌ | Q  | 3.75         | 5.10     | 3.46     | 4.10     | 3.81     | 4.36     | 2.77     | 3.65     |
+| DirectMHP            | ❌ | E  | **2.99**     | 5.35     | 3.77     | 4.04     | 3.57     | 5.47     | 4.02     | 4.35     |
+| Li et al. 2022       | ❌ | RM | 3.36         | 5.05     | 3.56     | 3.99     | 3.59     | **3.94** | 2.68     | **3.40** |
+| 6DRepNet             | ❌ | 6D | 3.63         | 4.91     | 3.37     | 3.97     | **3.24** | 4.48     | 2.68     | 3.47     |
+| FSA-Net (retrained)  | ✅ | E  | 5.41         | 6.82     | 5.42     | 5.88     | 4.74     | 5.32     | 3.26     | 4.44     |
+| 6DRepNet (retrained) | ✅ | 6D | 3.50         | 4.81     | 3.47     | 3.93     | 3.79     | 4.53     | 2.89     | 3.74     |
+| 6DoF-HPE (ours)      | ✅ | 6D | 3.56         | 4.74     | 3.35     | 3.88     | 3.91     | 4.43     | 2.69     | 3.68     |
+| **WQuatNet (ours)**  | ✅ | Q  | 3.39         | **4.62** | **3.23** | **3.75** | 3.91     | 4.20     | **2.64** | 3.58     |
 
-Download pre-trained RepVGG model '**RepVGG-B1g2-train.pth**' from [here](https://drive.google.com/drive/folders/1Avome4KvNp0Lqh2QwhXO6L5URQjzCjUq) and save it in the root directory.
 
-```sh
-python train.py
-```
+* **Table 4: MAE values for the BIWI dataset (split in a 70:30 ratio) using different methods.**
 
 
-##  **Deploy models**
+| Method              | RR | Yaw      | Pitch    | Roll     | MAE      |
+| ------------------- | -- | -------- | -------- | -------- | -------- |
+| FSA-Net             | E  | 2.89     | 4.29     | 3.60     | 3.59     |
+| HopeNet             | E  | 3.29     | 3.39     | 3.00     | 3.23     |
+| MFDNet              | RM | 2.99     | 3.68     | 2.99     | 3.22     |
+| SRNet               | Q  | 3.01     | 2.78     | 2.86     | 2.88     |
+| 6DRepNet            | 6D | 2.69     | 2.92     | 2.36     | 2.66     |
+| TokenHPE            | RM | 3.01     | **2.28** | **2.01** | 2.43     |
+| **WQuatNet (ours)** | Q  | **2.39** | 2.37     | 2.08     | **2.28** |
 
-For reparameterization the trained models into inference-models use the convert script.
+
+# Datasets
+
+* **CMU Panoptic**  from [here](http://domedb.perception.cs.cmu.edu/) for the full range angles.
+  
+* **300W-LP**, and **AFLW2000** from [here](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm) for the narrow range angles.
+
+* **BIWI**  from [here](https://icu.ee.ethz.ch/research/datsets.html) for the narrow range angles.
+
+  
+
+
+
+## **For Training**:
+
+If you **only** need to change the pre-trained RepVGG model '**RepVGG-D2se-200epochs-train.pth**' please see [here](https://drive.google.com/drive/folders/1Avome4KvNp0Lqh2QwhXO6L5URQjzCjUq) and save it in the root directory.
+
 
 ```
-python convert.py input-model.tar output-model.pth
+python3 train.py
 ```
 
-Inference-models are loaded with the flag ```deploy=True```.
+After training is done. Next step.
 
-```python
-model = SixDRepNet(backbone_name='RepVGG-B1g2',
-                    backbone_file='',
-                    deploy=True,
-                    pretrained=False)
+##  **For Deploy models**:
+
+For reparameterization, the trained models into inference models use the convert script.
+
+```
+python3 convert.py input-model.tar output-model.pth
 ```
 
+After converting the training model into an inference model. 
+Then, you can test your model.
 
+
+## **For Testing**:
+
+```
+python3 test.py
+```
+
+If you are too lazy to do the above steps, you can download the pre-trained RepVGG model to run your application. 
+'CMU_WQuatNet.pth [here](https://drive.google.com/file/d/1EzVFYVCjFmZrbK3bwlyIvF2swtUWzdqd/view?usp=drive_link)' and   'AGORA_WQuatNet.pth [here](https://drive.google.com/file/d/1k4pqR3Vh9yoOmAhfJepKtasqhh-j1njm/view?usp=drive_link)'  for the full range angles or '300W_LP_WQuatNet.pth [here](https://drive.google.com/file/d/1n5SOdH8eg29vmE7uTRuUKzjAuM-Hl6Fe/view?usp=drive_link)' for narrow range angles.
+
+# Citing
+
+```
+@article{algabri2025wquatnet,
+  title={WQuatNet: Wide range quaternion-based head pose estimation},
+  author={Algabri, Redhwan and Shin, Hyunsoo and Abdu, Ahmed and Bae, Ji-Hun and Lee, Sungon},
+  journal={Journal of King Saud University Computer and Information Sciences},
+  volume={37},
+  number={3},
+  pages={24},
+  year={2025},
+  publisher={Springer}
+}
+```
