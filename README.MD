@@ -120,7 +120,7 @@ python3 test.py
 ```
 
 If you are too lazy to do the above steps, you can download the pre-trained RepVGG model to run your application. 
-'CMU_best.pth [here](https://drive.google.com/file/d/1EzVFYVCjFmZrbK3bwlyIvF2swtUWzdqd/view?usp=drive_link)' for the full range angles or '300_best.pth [here](https://drive.google.com/file/d/1n5SOdH8eg29vmE7uTRuUKzjAuM-Hl6Fe/view?usp=drive_link)' for narrow range angles.
+'CMU_best.pth [here](https://drive.google.com/file/d/1Ya6QoaQL4JeUeiB1WsiEQwcpNfrQQaSZ/view?usp=sharing)' for the full range angles or '300_best.pth [here](https://drive.google.com/file/d/1n5SOdH8eg29vmE7uTRuUKzjAuM-Hl6Fe/view?usp=drive_link)' for narrow range angles.
 
 # Citing
 
