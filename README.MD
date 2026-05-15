@@ -20,14 +20,8 @@
 
 <table>
 <tr>
-<td><img src="images/AGORA1.jpg" height="160"></td>
-<td><img src="images/AGORA2.jpg" height="160"></td> 
-<td><img src="images/AGORA3.jpg" height="160"></td> 
-<td><img src="images/AGORA4.jpg" height="160"></td> 
-<td><img src="images/AGORA5.jpg" height="160"></td>
-<td><img src="images/AGORA6.jpg" height="160"></td> 
-<td><img src="images/AGORA7.jpg" height="160"></td> 
-<td><img src="images/AGORA8.jpg" height="160"></td> 
+<td><img src="images/1.png" height="160"></td>
+
 </tr>
 </table>
 
