@@ -7,7 +7,7 @@
 
 <table>
 <tr>
-<td><img src="images/1.png" height="240"></td>
+<td><img src="images/HPE_sym.png" height="240"></td>
 
 </tr>
 </table>
