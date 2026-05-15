@@ -25,8 +25,7 @@
 </tr>
 </table>
 
-* **Fig.** Snapshots of 8 different views from one sequence in the AGORA Panoptic val-set dataset.
-
+* **Fig.** Snapshots of different views.
 
 
 
