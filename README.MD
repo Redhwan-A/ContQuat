@@ -92,7 +92,7 @@
 
 ## **For Training**:
 
-If you **only** need to change the pre-trained RepVGG model '**RepVGG-D2se-200epochs-train.pth**' please see [here](https://drive.google.com/drive/folders/1Avome4KvNp0Lqh2QwhXO6L5URQjzCjUq) and save it in the root directory.
+If you **only** need to change the pre-trained RepVGG model '**RepVGG-B1g2-train.pth**' please see [here](https://drive.google.com/drive/folders/1Avome4KvNp0Lqh2QwhXO6L5URQjzCjUq) and save it in the root directory.
 
 
 ```
