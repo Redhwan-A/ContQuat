@@ -12,7 +12,7 @@
 </tr>
 </table>
 
-* **Fig.**  shows the difference between the narrow and full ranges.
+* **Fig.**  Framework of the proposed ContQuat model.
 
 
 # Results visualization
