@@ -33,13 +33,12 @@
 ## **Our results**
 * **Table 1: MAE values for the CMU dataset obtained using different methods for Narrow-range angles: −90◦ < yaw < 90◦.**
 
-| Method          | Retrain? | Yaw      | Pitch    | Roll     | MAE      |
-| --------------- | -------- | -------- | -------- | -------- | -------- |
-| DirectMHP       | Yes      | 5.86     | 8.25     | 7.25     | 7.12     |
-| DirectMHP       | No       | 5.75     | 8.01     | 6.96     | 6.91     |
-| 6DRepNet        | Yes      | 5.20     | 7.22     | 6.00     | 6.14     |
-| 6DoF-HPE (ours) | Yes      | **5.13** | **6.99** | **5.77** | **5.96** |
-| WQuatNet (ours) | Yes      | **4.67** | **6.77** | **5.42** | **5.62** |
+| Method | Retrain | Rep. | Yaw ↓ | Pitch ↓ | Roll ↓ | MAE ↓ |
+|--------|----------|------|--------|----------|---------|--------|
+| DirectMHP [[1]](#ref1) | ✅ | E | 5.86 | 8.25 | 7.25 | 7.12 |
+| DirectMHP [[1]](#ref1) | ❌ | E | 5.75 | 8.01 | 6.96 | 6.91 |
+| 6DRepNet [[2]](#ref2) | ✅ | 6D | 5.20 | 7.22 | 6.00 | 6.14 |
+| ContQuat (Ours) | ✅ | CQ | **4.64** | 6.84 | 5.54 | 5.67 |
 
 * **Table 1: MAE values for the CMU dataset obtained using different methods for Full-range angles: −180◦ < yaw < 180◦.**
 
