@@ -168,15 +168,13 @@ If you are too lazy to do the above steps, you can download the pre-trained RepV
 # Citing
 
 ```
-@article{algabri2025wquatnet,
-  title={WQuatNet: Wide range quaternion-based head pose estimation},
-  author={Algabri, Redhwan and Shin, Hyunsoo and Abdu, Ahmed and Bae, Ji-Hun and Lee, Sungon},
-  journal={Journal of King Saud University Computer and Information Sciences},
-  volume={37},
-  number={3},
-  pages={24},
-  year={2025},
-  publisher={Springer}
+@article{abdu2026contquat,
+  title={ContQuat: Continuous quaternion representation for head pose estimation},
+  author={Abdu, Ahmed and Bae, Ji-Hun and Lee, Sungon and Algabri, Redhwan},
+  journal={Information Sciences},
+  pages={123621},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
 
